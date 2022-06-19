@@ -100,3 +100,8 @@
   box-shadow: none;
   text-decoration: underline;
 }
+.fetchMoreButton:disabled {
+  border: none;
+  background-color: transparent;
+  box-shadow: none;
+}
