@@ -8,15 +8,20 @@ import styles from "./PostsPage.module.css";
 
 export default function PostsPage(): React.ReactElement {
   const { doLogout } = useAuthContext();
-  const { fetchPage } = usePostsContext();
+  const { fetchPage, clearState } = usePostsContext();
 
   useEffect(() => {
     fetchPage();
   }, []);
 
+  const handleLogout = (): void => {
+    clearState();
+    doLogout();
+  };
+
   return (
     <div className={styles.pageContainer}>
-      <PageHeader onLogout={doLogout} />
+      <PageHeader onLogout={handleLogout} />
 
       <UsersList />
       <PostsList />

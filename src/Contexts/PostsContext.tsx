@@ -12,6 +12,7 @@ interface PostsState {
 
 interface PostsFuncs {
   fetchPage: () => void;
+  clearState: () => void;
 }
 
 type IPostsContext = PostsState & PostsFuncs;
@@ -39,6 +40,7 @@ class ContextContainer extends React.Component<any, PostsState> {
 
     this.funcs = {
       fetchPage: this.fetchPage,
+      clearState: this.clearState,
     };
   }
 
@@ -108,6 +110,10 @@ class ContextContainer extends React.Component<any, PostsState> {
     } catch (err: any) {
       this.setState({ fetchPostsErrorMessage: TEXTS.common.requestError });
     }
+  };
+
+  clearState = (): void => {
+    this.setState({ ...DEFAULT_STATE });
   };
 
   render(): React.ReactNode {
