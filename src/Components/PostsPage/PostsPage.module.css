@@ -1,0 +1,19 @@
+.pageContainer {
+  width: 90%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 70px 1fr;
+  grid-template-columns: 300px 1fr;
+  grid-gap: 10px;
+  overflow: hidden;
+  margin: 5px 0;
+}
+
+.postsContentContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 10px;
+}

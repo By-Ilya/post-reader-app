@@ -1,0 +1,20 @@
+.buttonContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--main-background-color);
+  border: 1px solid grey;
+  border-radius: var(--element-border-radius);
+  box-shadow: var(--element-shadow);
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+}
+.buttonContainer:active {
+  box-shadow: none;
+}
+.buttonContainer:disabled {
+  cursor: not-allowed;
+  box-shadow: var(--element-shadow);
+}

@@ -1,0 +1,102 @@
+.usersListContainer {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  grid-row: 2 / 2;
+  grid-column: 1 / 1;
+
+  display: grid;
+  grid-template-rows: 50px auto 40px;
+  grid-template-columns: 1fr;
+
+  border: var(--element-border);
+  border-radius: var(--element-border-radius);
+  box-shadow: var(--element-shadow);
+  background-color: var(--element-background-color);
+}
+
+.searchPanel {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  grid-row: 1 / 1;
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  border-bottom: var(--element-border);
+}
+
+.usersList {
+  width: 100%;
+  height: calc(100vh - 185px);
+  box-sizing: border-box;
+  grid-row: 2 / 2;
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  gap: 10px;
+  overflow: scroll;
+}
+.emptyList {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  font-size: 20px;
+}
+
+.userContainer {
+  width: calc(100% - 5px);
+  height: 48px;
+  line-height: 48px;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1.8fr 0.2fr;
+  grid-gap: 5px;
+}
+.activeUserContainer {
+  background-color: dimgrey;
+  color: white;
+}
+
+.userName {
+  grid-row: 1 / -1;
+  grid-column: 1 / 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.counter {
+  width: 32px;
+  height: 32px;
+  grid-row: 1 / -1;
+  grid-column: 2 / 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: grey;
+  border-radius: 50%;
+  color: white;
+}
+
+.fetchMoreContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  border-top: var(--element-border);
+  justify-content: center;
+  align-items: center;
+}
+.fetchMoreButton {
+  width: 100%;
+  height: 30px;
+  border: none;
+  background-color: transparent;
+  box-shadow: none;
+  text-decoration: underline;
+}
