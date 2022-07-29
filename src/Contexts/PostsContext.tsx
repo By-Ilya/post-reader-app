@@ -49,9 +49,9 @@ class ContextContainer extends React.Component<any, PostsState> {
       return;
     }
 
-    this.setState((state: PostsState) => {
-      this.setState({ page: state.page + 1 });
-    }, this.doFetch);
+    const { page } = this.state;
+
+    this.setState({ page: page + 1 }, this.doFetch);
   };
 
   updateLocalPosts = (fetchedPosts: PostData[]): void => {

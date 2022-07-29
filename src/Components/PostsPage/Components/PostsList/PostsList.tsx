@@ -29,13 +29,11 @@ export default function PostsList(): React.ReactElement {
     }
 
     return (userPosts.get(userId || EMPTY_STRING) || [])
-      .filter((post: PostData) => {
-        if (localSearch.length < 3) {
-          return true;
-        }
-
-        return isStrContainPattern(post.message, localSearch);
-      })
+      .filter(
+        (post: PostData) =>
+          localSearch.length < 3 ||
+          isStrContainPattern(post.message, localSearch)
+      )
       .sort((a: PostData, b: PostData) =>
         sortMode === SortMode.DESC
           ? descSortingFunc(a.created_time, b.created_time)
@@ -82,9 +80,7 @@ export default function PostsList(): React.ReactElement {
   );
 
   const handleClickSortButton = (): void => {
-    setSortMode((mode: SortMode) =>
-      mode === SortMode.DESC ? SortMode.ASC : SortMode.DESC
-    );
+    setSortMode((mode: SortMode) => -mode);
   };
 
   return (
