@@ -1,0 +1,10 @@
+version: '3.2'
+services:
+  post-reader-app:
+    build:
+      context: .
+      dockerfile: 'Dockerfile'
+    ports:
+      - '3002:80'
+    volumes:
+      - ./:/post-reader-app
